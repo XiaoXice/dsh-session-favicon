@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="304" height="360" viewBox="0 0 304 360" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M 0 1 L 9 5 L 0 9 z" fill="#64748b"/>
+  </marker></defs>
+<text x="26" y="36" font-size="12" font-weight="600" fill="#0f172a">亮色模式：页面用黑鲸鱼 favicon.svg</text>
+<g>
+  <rect x="26" y="50" width="104" height="104" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <circle cx="78" cy="102" r="47.84" fill="#0f172a"/>
+</g>
+<g>
+  <rect x="174" y="50" width="104" height="104" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <g><circle cx="52" cy="52" r="40.480000000000004" fill="#0f172a"/>
+<circle cx="69.6" cy="69.6" r="25.343999999999998" fill="rgba(255,255,255,0.94)" stroke="rgba(15,23,42,0.22)" stroke-width="2.475"/>
+<circle cx="69.6" cy="69.6" r="18.1632" fill="#22c55e"/></g>
+</g>
+<path d="M 140 102 L 154 102" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="78" y="169" text-anchor="middle" font-size="11" fill="#64748b">叠加前</text>
+<text x="226" y="169" text-anchor="middle" font-size="11" fill="#64748b">叠加后</text>
+<text x="26" y="210" font-size="12" font-weight="600" fill="#0f172a">暗色模式：页面用白鲸鱼 favicon-dark.svg</text>
+<g>
+  <rect x="26" y="224" width="104" height="104" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <circle cx="78" cy="276" r="47.84" fill="#f8fafc"/>
+</g>
+<g>
+  <rect x="174" y="224" width="104" height="104" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <g><circle cx="52" cy="52" r="40.480000000000004" fill="#f8fafc"/>
+<circle cx="69.6" cy="69.6" r="25.343999999999998" fill="rgba(15,23,42,0.88)" stroke="rgba(255,255,255,0.28)" stroke-width="2.475"/>
+<circle cx="69.6" cy="69.6" r="18.1632" fill="#22c55e"/></g>
+</g>
+<path d="M 140 276 L 154 276" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="78" y="343" text-anchor="middle" font-size="11" fill="#64748b">叠加前</text>
+<text x="226" y="343" text-anchor="middle" font-size="11" fill="#64748b">叠加后</text>
+</svg>

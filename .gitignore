@@ -1,0 +1,19 @@
+node_modules/
+.pnpm-store/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# packaging leftovers
+*.tgz
+dist/
+
+# never commit local state, logs or secrets
+*.log
+.plugin-manager/
+.env
+.env.*

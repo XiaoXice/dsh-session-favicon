@@ -1,0 +1,6 @@
+# dsh-session-favicon bundle patch: one Host row that collects live session state
+# from Host events and serves it on a same-origin JSON route. The Client half
+# (registered through `dsh.client`) reads that route and repaints the favicon.
+- insert:
+    - id: session-favicon
+      name: 'dsh-session-favicon'

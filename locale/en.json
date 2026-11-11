@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Session status favicon",
+    "description": "Paints the browser tab icon with the live session state: a spinner while the agent runs, a green dot when a turn completes, an amber dot while it waits for you, and a red dot after an error."
+  }
+}

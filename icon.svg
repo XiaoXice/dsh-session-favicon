@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" role="img" aria-label="Session status favicon">
+  <!-- A tab with a session-status badge in its bottom-right corner. Original artwork.
+       Mid-tone palette on purpose: the Plugin Manager draws this row on both the light
+       and the dark theme, and the shipped favicons do the same job with #000 / #fff. -->
+  <rect x="7.5" y="9.5" width="49" height="41" rx="9" stroke="#8b98ab" stroke-width="4"/>
+  <path d="M19 22h18M19 32h12" stroke="#8b98ab" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="44.5" cy="44.5" r="12.5" fill="#5b6a80"/>
+  <circle cx="44.5" cy="44.5" r="9.5" fill="#22c55e"/>
+</svg>
