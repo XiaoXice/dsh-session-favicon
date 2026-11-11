@@ -42,7 +42,7 @@ Unlike the existing favicon plugins, which aggregate the whole workspace (so eve
 
 ## 它是怎么工作的
 
-<a href="docs/flow.svg"><img src="docs/flow.svg" alt="架构：宿主事件 → 状态机 → JSON 路由 → 客户端按会话取行 → canvas 合成" width="760"></a>
+<a href="docs/flow.svg"><img src="docs/flow.svg" alt="架构：宿主事件 → 状态机 → JSON 路由 → 客户端按会话取行 → canvas 合成" width="764"></a>
 
 **Host 半边**（`index.js`）订阅宿主事件维护 `Map<SessionId, 状态>`，用一个同源 JSON 路由把快照吐出去：
 
@@ -77,7 +77,7 @@ StrictSessionEntry → SessionEntry → renderEntry(Comp, standard, …)
 
 ## 明暗模式
 
-<a href="docs/themes.svg"><img src="docs/themes.svg" alt="亮色与暗色两套底图各自叠加同色系底板" width="304"></a>
+<a href="docs/themes.svg"><img src="docs/themes.svg" alt="亮色与暗色两套底图各自叠加同色系底板" width="306"></a>
 
 DSH 页面自带**两套** favicon，靠媒体查询切换：`favicon-dark.svg`（白色鲸鱼，`prefers-color-scheme: dark`）与 `favicon.svg`（黑色鲸鱼，`light`）。本插件的处理：
 
@@ -155,7 +155,9 @@ dsh-session-favicon/
 ├── client.js             # 客户端半边：Slot 会话身份 + canvas 合成 + 轮询
 ├── icon.svg              # 插件管理器里的行图标（中间调，明暗主题都看得见）
 ├── locale/{en,zh}.json   # meta.title / meta.description
-└── docs/*.svg            # README 示意图
+└── docs/
+    ├── generate-figures.mjs  # 生成下面三张图（徽标常量镜像自 client.js）
+    └── *.svg                 # README 示意图
 ```
 
 无构建步骤：`client.js` 直接就是 `window.__ModuleLoader__.load({ id, factory })` 工厂，`index.js` 是普通 ESM 插件。
@@ -165,7 +167,11 @@ dsh-session-favicon/
 ```sh
 node --check index.js && node --check client.js   # 语法
 curl -s http://127.0.0.1:3080/dsh-session-favicon.json   # 看宿主状态快照
+node docs/generate-figures.mjs                    # 重新生成 README 里的三张图
 ```
+
+`docs/generate-figures.mjs` 把徽标几何与配色从 [`client.js`](client.js) 镜像了一份（`CX / CY / R / PLATE_SCALE / DOT_SCALE / ARC_SCALE / DOT_COLORS / PLATES`），
+所以改了这些常量请顺手重跑一次，图就不会和实现脱节。脚本自带两道断言：每个图标的 `translate` 必须与所在格子对齐，所有图元不得越出画布。
 
 改完 `client.js` 等约 1 秒，宿主会把新产物推给已打开的页面；核对仓库源码与宿主实际下发字节是否一致，可用 `/plugins/events` 的 SSE 拿到 `rev`，再取 `plugins/??dsh-session-favicon/client.js&rev=<rev>`。
 
