@@ -166,7 +166,7 @@ curl -s http://127.0.0.1:3080/dsh-session-favicon.json
 
 - 宿主半边：`/dsh-session-favicon.json` 实测可用；用真实子 agent 会话验证过 `running → done` 的跃迁、多会话混合状态、优先级聚合与衰减。
 - 客户端半边：`node --check` 通过；插件已进入启动图（`/plugins/events` 的 SSE 可见 `immediately: true` 与产物 rev），宿主对外的字节与仓库源码一致。
-- **未验证**：真实标签页里的视觉呈现（本机浏览器控制通道无法挂载 DSH GUI 页签名）。README 里的三张图是按代码常量绘制的**示意图**，不是运行截图。
+- **未验证**：真实浏览器标签页里的最终呈现——开发环境无法对已认证的 DSH GUI 页截图。README 里的三张图是按代码常量绘制的**示意图**，不是运行截图。
 
 ## 目录结构
 
