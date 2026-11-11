@@ -4,6 +4,14 @@
   "private": true,
   "description": "Paints THIS tab's DSH session state onto the browser tab icon — spinner while running, green dot when done, amber dot while it waits for you, red dot after an error, original icon untouched when idle — with per-scheme badges for light and dark mode. · 在 DSH web 的标签页图标上显示「本标签页会话」的状态：运行中转圈、完成绿点、等待输入橙黄点、出错红点；空闲保持原图标，并适配明暗两套 favicon。",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XiaoXice/dsh-session-favicon.git"
+  },
+  "homepage": "https://github.com/XiaoXice/dsh-session-favicon",
+  "bugs": {
+    "url": "https://github.com/XiaoXice/dsh-session-favicon/issues"
+  },
   "icon": "icon.svg",
   "type": "module",
   "engines": {

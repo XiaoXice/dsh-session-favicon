@@ -3,6 +3,12 @@
 > 让 DSH web 的**标签页图标**显示**这个标签页自己的会话状态**：运行中转圈、完成绿点、等你输入橙黄点、出错红点；新建/刚进入的会话一律不动原图标。
 >
 > 多开标签页时，每个标签页各看各的会话——互不同步。
+>
+> 仓库：<https://github.com/XiaoXice/dsh-session-favicon> · 许可证 MIT
+
+```sh
+dsh plugin --profile web add github:XiaoXice/dsh-session-favicon
+```
 
 <a href="docs/states.svg"><img src="docs/states.svg" alt="五种状态：待机、运行中、等待输入、完成、错误" width="652"></a>
 
@@ -88,12 +94,29 @@ DSH 页面自带**两套** favicon，靠媒体查询切换：`favicon-dark.svg`�
 
 ## 安装
 
-```sh
-# 方式一：命令行
-dsh plugin --profile web add /path/to/dsh-session-favicon
+推荐直接从 GitHub 安装：
 
-# 方式二：让 Agent 用 plugin_manager 安装（install_bundle，target 传包目录绝对路径）
+```sh
+dsh plugin --profile web add github:XiaoXice/dsh-session-favicon
 ```
+
+`github:` 是插件管理器认的宿主简写（同样支持 `gitlab:` / `bitbucket:` / `gist:`），也可以直接写完整地址：
+
+```sh
+dsh plugin --profile web add https://github.com/XiaoXice/dsh-session-favicon
+dsh plugin --profile web add git+https://github.com/XiaoXice/dsh-session-favicon.git
+```
+
+让 Agent 装也行：`plugin_manager` 的 `install_bundle`，`target` 传上面任何一种 spec。
+
+开发时用本地 checkout：
+
+```sh
+git clone https://github.com/XiaoXice/dsh-session-favicon.git
+dsh plugin --profile web add /path/to/dsh-session-favicon
+```
+
+卸载：`dsh plugin --profile web remove dsh-session-favicon`。
 
 **新增 bundle 要重启一次 `dsh web`** 才会进入 profile 装配；装好之后再改 `client.js` 可以热更（宿主每 500ms 轮询插件产物并推给页面），而改 `index.js`（宿主半边）需要重启——进程内 ESM 缓存不会重新加载。
 
@@ -165,6 +188,7 @@ dsh-session-favicon/
 ## 开发
 
 ```sh
+git clone https://github.com/XiaoXice/dsh-session-favicon.git && cd dsh-session-favicon
 node --check index.js && node --check client.js   # 语法
 curl -s http://127.0.0.1:3080/dsh-session-favicon.json   # 看宿主状态快照
 node docs/generate-figures.mjs                    # 重新生成 README 里的三张图
